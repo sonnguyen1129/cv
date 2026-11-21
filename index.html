@@ -4,83 +4,126 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Son Nguyen · CV</title>
-<meta name="description" content="Son Nguyen — Senior Backend Engineer, Java & Cloud Infrastructure, Hanoi.">
+<meta name="description" content="Son Nguyen — Senior Backend Engineer, Java & Cloud Infrastructure, Hanoi. Builds the Mobility-as-a-Service platform at WILLERS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 /* VOICE: a senior engineer's spec sheet — calm, exact, nothing decorative.
-   IDEA: the page behaves like a system design document: one architecture drawing, then ruled tables.
-   PICTURE: the MaaS platform he builds, drawn as a service map inside a Kubernetes-on-AWS boundary.
-   COLOUR and TYPE: stone ground, black ink, brick accent, white panels; Schibsted Grotesk throughout.
-   LAYOUT: identity band, full-width drawing, then a ruled two-column record: dates in the margin. */
+   IDEA: the page reads like a design document: identity, then one case study (the MaaS platform), then the record.
+   COLOUR and TYPE: stone ground, black ink, brick accent, white panels; Schibsted Grotesk throughout. */
 :root{color-scheme:light dark;
   --bg:light-dark(#e7e4df,#171513);--panel:light-dark(#ffffff,#211e1b);--ink:light-dark(#141210,#eeeae4);
   --mute:light-dark(#5d5750,#a59e95);--rule:light-dark(#cfcac2,#3a3530);--brick:light-dark(#c8371e,#ef6a4e);
-  --wire:light-dark(#8a837a,#6f685f)}
+  --wire:light-dark(#8a837a,#6f685f);--bar:light-dark(rgba(231,228,223,.9),rgba(23,21,19,.9))}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
-html{scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+html{scroll-padding-top:84px;scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
 a{color:inherit;text-decoration-color:var(--brick);text-underline-offset:3px}
 a:hover{color:var(--brick)}
 :focus-visible{outline:2px solid var(--brick);outline-offset:2px}
-.wrap{max-width:1240px;margin:0 auto}
-.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-block:16px;border-bottom:1px solid var(--rule)}
-.mono{font-weight:700;letter-spacing:.02em}
-.tools{display:flex;gap:8px;flex-wrap:wrap}
-.btn{font:inherit;font-size:15px;min-height:44px;padding:0 16px;border-radius:2px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(36px,5vw,72px) max(5vw,16px)}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:5;background:var(--bar);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);padding:0 max(5vw,16px)}
+.top{display:flex;align-items:center;gap:16px;min-height:64px}
+.mono{font-weight:700;letter-spacing:.02em;text-decoration:none;margin-right:auto}
+.nav{display:flex;gap:4px}
+.nav a{text-decoration:none;font-size:15px;padding:10px 10px;color:var(--mute)}
+.nav a:hover{color:var(--ink)}
+.tools{display:flex;gap:8px}
+.btn{font:inherit;font-size:15px;min-height:44px;padding:0 16px;border-radius:2px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--brick);border-color:var(--brick);color:#fff}
 .seg{display:inline-flex;border:1px solid var(--ink);border-radius:2px;overflow:hidden}
-.seg button{font:inherit;font-size:15px;min-height:44px;min-width:52px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button{font:inherit;font-size:15px;min-height:44px;min-width:48px;border:0;background:transparent;color:var(--ink);cursor:pointer}
 .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
-.hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end}
-h1{font-size:clamp(40px,6vw,64px);line-height:1.02;margin:0 0 10px;text-wrap:balance;letter-spacing:-.01em}
-.sub{font-size:clamp(18px,2vw,22px);margin:0 0 6px;font-weight:500}
-.meta{color:var(--mute);margin:0 0 18px}
-.links{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0;padding:0;list-style:none}
-.summary{font-size:17px;max-width:62ch;margin:22px 0 0}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brick);margin:0 0 12px}
+h1{font-size:clamp(44px,7vw,76px);line-height:1;margin:0 0 14px;text-wrap:balance;letter-spacing:-.02em}
+.sub{font-size:clamp(19px,2.2vw,24px);line-height:1.3;margin:0 0 6px;font-weight:500}
+.meta{color:var(--mute);margin:0}
+.summary{font-size:clamp(17px,1.6vw,19px);max-width:60ch;margin:22px 0 26px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
 .facts{display:grid;border-top:2px solid var(--ink)}
-.fact{display:grid;grid-template-columns:5.5em minmax(0,1fr);align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule)}
-.fact b{font-size:clamp(28px,3.4vw,40px);line-height:1;color:var(--brick)}
+.fact{display:grid;grid-template-columns:7em minmax(0,1fr);align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.fact b{font-size:clamp(30px,3.6vw,44px);line-height:1;color:var(--brick);letter-spacing:-.02em}
 .fact span{color:var(--mute)}
-.figband{background:var(--panel);border-block:1px solid var(--rule)}
-.fig{position:relative;height:380px}
+
+/* case study */
+.case{background:var(--panel);border-block:1px solid var(--rule)}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin:0 0 18px;letter-spacing:-.01em;text-wrap:balance}
+.intro{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.lede{font-size:clamp(17px,1.6vw,19px);margin:0;max-width:60ch}
+.spec{margin:0;border-top:2px solid var(--ink)}
+.spec div{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.spec dt{color:var(--mute)}
+.spec dd{margin:0;font-weight:500}
+.fig{position:relative;height:400px;margin:clamp(32px,4vw,48px) 0 8px;background:var(--bg);border:1px solid var(--rule);border-radius:3px}
 .fig>svg{position:absolute;inset:0;width:100%;height:100%}
-.cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-.cap h2{margin:0}
-.cap p{margin:0;color:var(--mute);font-size:14px;max-width:60ch}
-h2{font-size:28px;line-height:1.1;margin:0 0 20px}
-.rec{display:grid;grid-template-columns:11em minmax(0,1fr);gap:8px 32px;padding:22px 0;border-top:1px solid var(--rule)}
-.rec:first-of-type{border-top:2px solid var(--ink)}
-.when{color:var(--mute);font-size:15px;white-space:nowrap}
-.rec h3{margin:0;font-size:20px;line-height:1.25}
-.org{margin:2px 0 8px;color:var(--mute)}
-.org strong{color:var(--ink);font-weight:500}
-.rec ul{margin:0 0 10px;padding-left:1.1em}
-.rec li{margin:3px 0;max-width:70ch}
+.figcap{margin:0 0 clamp(32px,4vw,48px);color:var(--mute);font-size:14px}
+h3{font-size:20px;line-height:1.25;margin:0}
+.areas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,4vw,56px)}
+.area{padding:20px 0 22px;border-top:1px solid var(--rule)}
+.area:nth-child(-n+2){border-top:2px solid var(--ink)}
+.area h3{display:flex;gap:12px;align-items:baseline;margin-bottom:10px}
+.area h3 span{font-size:13px;font-weight:700;color:var(--brick);font-variant-numeric:tabular-nums}
+.area ul{margin:0;padding-left:1.1em}
+.area li{margin:5px 0}
+.stack{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px clamp(16px,3vw,40px)}
+.stack h4{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
-.tags li{font-size:13px;padding:3px 8px;border:1px solid var(--rule);background:var(--panel);border-radius:2px;margin:0}
-.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px)}
+.tags li{font-size:13px;padding:3px 9px;border:1px solid var(--rule);background:var(--panel);border-radius:2px;margin:0}
+.case .tags li{background:var(--bg)}
+
+/* experience */
+.rec{display:grid;grid-template-columns:11em minmax(0,1fr);gap:8px 36px;padding:24px 0;border-top:1px solid var(--rule)}
+.rec:first-child{border-top:2px solid var(--ink)}
+.when{color:var(--mute);font-size:15px;white-space:nowrap}
+.now{display:inline-block;margin-top:6px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brick)}
+.org{margin:2px 0 10px;color:var(--mute)}
+.org strong{color:var(--ink);font-weight:500}
+.rec ul{margin:0 0 12px;padding-left:1.1em}
+.rec li{margin:4px 0;max-width:72ch}
+.sect+.sect{margin-top:clamp(48px,6vw,72px)}
+
+/* skills etc */
+.cols{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,64px)}
 table{width:100%;border-collapse:collapse}
 th,td{text-align:left;vertical-align:top;padding:12px 12px 12px 0;border-bottom:1px solid var(--rule)}
-thead th{border-bottom:2px solid var(--ink);font-size:14px;color:var(--mute);font-weight:500}
+tbody tr:first-child td{border-top:2px solid var(--ink)}
 td:first-child{font-weight:500;width:9.5em}
 .right{text-align:right;white-space:nowrap;padding-right:0}
-.sect+.sect{margin-top:40px}
+.edu{border-top:2px solid var(--ink);padding-top:12px}
 footer{color:var(--mute);font-size:14px;border-top:1px solid var(--rule)}
-@media(max-width:860px){.hero,.cols{grid-template-columns:minmax(0,1fr)}.fig{height:560px}}
-@media(max-width:600px){.rec{grid-template-columns:minmax(0,1fr);gap:4px}table{font-size:14px}td:first-child{width:auto}
-  .stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--rule)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:7em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:6.5em;margin-inline-start:-7em;color:var(--mute);font-weight:400}.stack td:empty{display:none}}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:960px){.nav{display:none}}
+@media(max-width:860px){.hero,.intro,.cols{grid-template-columns:minmax(0,1fr)}.fig{height:580px}.stack{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.areas{grid-template-columns:minmax(0,1fr)}.area:nth-child(2){border-top:1px solid var(--rule)}
+  .rec{grid-template-columns:minmax(0,1fr);gap:4px}.spec div{grid-template-columns:7em minmax(0,1fr)}td:first-child{width:7em}
+  #print{display:none}}
 @media(prefers-reduced-motion:no-preference){.flow{stroke-dasharray:4 6;animation:run 1.6s linear infinite}@keyframes run{to{stroke-dashoffset:-20}}}
-@media print{:root{color-scheme:light}body{background:#fff;font-size:12.5px}.tools,.figband{display:none}.band{padding:14px 0}.rec{break-inside:avoid;padding:12px 0}a{text-decoration:none}}
+@media print{:root{color-scheme:light}body{background:#fff;font-size:12px}.bar,.fig,.figcap,.cta{display:none}
+  .band{padding:12px 0}.case{background:#fff;border:0}.rec,.area{break-inside:avoid;padding:10px 0}a{text-decoration:none}h1{font-size:40px}h2{font-size:24px}}
 </style>
 <script src="cv-data.js"></script>
 </head>
 <body>
-<div class="band" style="padding-block:0">
+<div class="bar">
   <div class="wrap top">
-    <span class="mono" id="mono">SN</span>
+    <a class="mono" href="#top" id="mono">SN</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#maas" data-i="navProj">MaaS platform</a>
+      <a href="#experience" data-i="navExp">Experience</a>
+      <a href="#skills" data-i="navSkills">Skills</a>
+    </nav>
     <div class="tools">
       <div class="seg" role="group" aria-label="Language">
         <button type="button" id="l-en" aria-pressed="true">EN</button>
@@ -91,56 +134,62 @@ footer{color:var(--mute);font-size:14px;border-top:1px solid var(--rule)}
   </div>
 </div>
 
-<header class="band">
+<header class="band" id="top">
   <div class="wrap hero">
     <div>
       <h1 id="name"></h1>
       <p class="sub" id="title"></p>
       <p class="meta" id="loc"></p>
-      <ul class="links" id="links"></ul>
       <p class="summary" id="summary"></p>
+      <div class="cta" id="links"></div>
     </div>
     <div class="facts" id="facts"></div>
   </div>
 </header>
 
-<section class="band figband" aria-labelledby="h-arch">
+<section class="band case" id="maas" aria-labelledby="h-proj">
   <div class="wrap">
-    <div class="cap"><h2 id="h-arch" data-i="arch">What I build</h2><p data-i="archcap"></p></div>
-    <div class="fig" id="fig"><svg id="map" role="img" aria-label="Service map of a Mobility-as-a-Service platform"></svg></div>
+    <p class="eyebrow" data-i="proj">Key project</p>
+    <div class="intro">
+      <div><h2 id="h-proj"></h2><p class="lede" id="p-about"></p></div>
+      <dl class="spec" id="p-spec"></dl>
+    </div>
+    <div class="fig"><svg id="map" role="img" aria-label="Simplified illustration of a Mobility-as-a-Service system"></svg></div>
+    <p class="figcap" data-i="archcap"></p>
+    <h3 data-i="contrib" style="margin-bottom:16px">What I worked on</h3>
+    <div class="areas" id="p-areas"></div>
+    <div class="stack" id="p-stack"></div>
   </div>
 </section>
 
 <main class="band">
   <div class="wrap">
-    <section class="sect" aria-labelledby="h-exp"><h2 id="h-exp" data-i="exp">Experience</h2><div id="exp"></div></section>
-    <section class="sect" aria-labelledby="h-proj"><h2 id="h-proj" data-i="proj">Key project</h2><div id="proj"></div></section>
-    <section class="sect cols">
-      <div><h2 data-i="skills">Skills</h2><table class="stack"><tbody id="skills"></tbody></table></div>
+    <section class="sect" id="experience" aria-labelledby="h-exp"><p class="eyebrow" data-i="career">Career</p><h2 id="h-exp" data-i="exp">Experience</h2><div id="exp"></div></section>
+    <section class="sect cols" id="skills">
+      <div><h2 data-i="skills">Skills</h2><table><tbody id="skillrows"></tbody></table></div>
       <div>
         <h2 data-i="certs">Certifications</h2><table><tbody id="certs"></tbody></table>
-        <h2 data-i="edu" style="margin-top:36px">Education</h2><div id="edu"></div>
+        <h2 data-i="edu" style="margin-top:40px">Education</h2><div id="edu"></div>
       </div>
-    </section>
-    <section class="sect" aria-labelledby="h-repo"><h2 id="h-repo" data-i="repos">Side projects on GitHub</h2>
-      <table class="stack"><thead><tr><th data-i="repo">Repository</th><th data-i="desc">About</th><th class="right" data-i="lang">Language</th></tr></thead><tbody id="repos"></tbody></table>
     </section>
   </div>
 </main>
 
-<footer class="band"><div class="wrap" id="foot"></div></footer>
+<footer class="band" style="padding-block:28px"><div class="wrap"><span id="foot"></span><a href="#top" data-i="backtop">Back to top ↑</a></div></footer>
 
 <script>
 {
 const D = window.CV;
 const UI = {
-  en:{print:"Print / Save PDF",arch:"What I build",archcap:"The Mobility-as-a-Service platform I have worked on since 2020: booking, payment, notification and live-tracking services, running on Kubernetes in AWS.",
-      exp:"Experience",proj:"Key project",skills:"Skills",certs:"Certifications",edu:"Education",repos:"Side projects on GitHub",repo:"Repository",desc:"About",lang:"Language",
+  en:{print:"Print / Save PDF",navProj:"MaaS platform",navExp:"Experience",navSkills:"Skills",proj:"Key project",contrib:"What I worked on",career:"Career",
+      archcap:"Simplified illustration of the kind of system I work on — not the actual production architecture.",
+      exp:"Experience",current:"Current",skills:"Skills",certs:"Certifications",edu:"Education",backtop:"Back to top ↑",
       foot:"Details taken from my LinkedIn profile. Last updated November 2026.",gw:"API gateway",riders:"Rider app",ops:"Operator portal",boundary:"Kubernetes on AWS",
       svc:["Booking","Payment","Notification","Vehicle tracking","Route planning"],ext:"Third-party APIs"},
-  vi:{print:"In / Lưu PDF",arch:"Những gì tôi xây dựng",archcap:"Nền tảng Mobility-as-a-Service tôi tham gia từ 2020: các dịch vụ đặt chỗ, thanh toán, thông báo và theo dõi xe trực tiếp, chạy trên Kubernetes tại AWS.",
-      exp:"Kinh nghiệm",proj:"Dự án tiêu biểu",skills:"Kỹ năng",certs:"Chứng chỉ",edu:"Học vấn",repos:"Dự án cá nhân trên GitHub",repo:"Repository",desc:"Mô tả",lang:"Ngôn ngữ",
-      foot:"Thông tin lấy từ hồ sơ LinkedIn. Cập nhật tháng 11/2026.",gw:"API gateway",riders:"App người dùng",ops:"Trang nhà vận hành",boundary:"Kubernetes trên AWS",
+  vi:{print:"In / Lưu PDF",navProj:"Nền tảng MaaS",navExp:"Kinh nghiệm",navSkills:"Kỹ năng",proj:"Dự án tiêu biểu",contrib:"Phần việc của tôi",career:"Sự nghiệp",
+      archcap:"Hình minh hoạ đơn giản cho loại hệ thống tôi làm — không phải kiến trúc production thực tế.",
+      exp:"Kinh nghiệm",current:"Hiện tại",skills:"Kỹ năng",certs:"Chứng chỉ",edu:"Học vấn",backtop:"Lên đầu trang ↑",
+      foot:"Thông tin lấy từ hồ sơ LinkedIn. Cập nhật tháng 11/2026.",gw:"API gateway",riders:"App hành khách",ops:"Trang nhà vận hành",boundary:"Kubernetes trên AWS",
       svc:["Đặt chỗ","Thanh toán","Thông báo","Theo dõi xe","Lập lộ trình"],ext:"API bên thứ ba"}
 };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -148,36 +197,39 @@ const $ = id => document.getElementById(id);
 let lang = "en";
 const t = v => (v && typeof v === "object" && !Array.isArray(v)) ? (v[lang] ?? v.en) : v;
 const tags = a => `<ul class="tags">${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
+const list = a => `<ul>${a.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;
 
 function render(){
-  const u = UI[lang];
+  const u = UI[lang], p = D.project;
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i]").forEach(el => { if (u[el.dataset.i]) el.textContent = u[el.dataset.i]; });
   $("l-en").setAttribute("aria-pressed", lang==="en"); $("l-vi").setAttribute("aria-pressed", lang==="vi");
   $("name").textContent = lang==="vi" ? D.nameVi : D.name;
   $("title").textContent = t(D.title);
   $("loc").textContent = t(D.location);
-  $("links").innerHTML = D.links.map(l=>`<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a> <span style="color:var(--mute)">${esc(l.text)}</span></li>`).join("");
   $("summary").textContent = t(D.summary);
+  $("links").innerHTML = D.links.map((l,i)=>`<a class="btn${i===0?" solid":""}" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.text)}">${esc(l.label)} ↗</a>`).join("");
   $("facts").innerHTML = D.facts.map(f=>`<div class="fact"><b>${esc(f.value)}</b><span>${esc(t(f.label))}</span></div>`).join("");
-  $("exp").innerHTML = D.experience.map(e=>`<article class="rec"><div class="when">${esc(t(e.period))}</div><div>
+
+  $("h-proj").textContent = t(p.name);
+  $("p-about").textContent = t(p.about);
+  $("p-spec").innerHTML = p.spec.map(s=>`<div><dt>${esc(t(s.k))}</dt><dd>${esc(t(s.v))}</dd></div>`).join("");
+  $("p-areas").innerHTML = p.areas.map((a,i)=>`<article class="area"><h3><span>0${i+1}</span>${esc(t(a.title))}</h3>${list(t(a.points))}</article>`).join("");
+  $("p-stack").innerHTML = p.stack.map(s=>`<div><h4>${esc(t(s.group))}</h4>${tags(s.items)}</div>`).join("");
+
+  $("exp").innerHTML = D.experience.map((e,i)=>`<article class="rec"><div class="when">${esc(t(e.period))}${i===0?`<br><span class="now">${esc(u.current)}</span>`:""}</div><div>
       <h3>${esc(t(e.role))}</h3><p class="org"><strong>${esc(e.company)}</strong> · ${esc(t(e.place))}</p>
-      <ul>${t(e.points).map(p=>`<li>${esc(p)}</li>`).join("")}</ul>${tags(e.tags)}</div></article>`).join("");
-  const p = D.project;
-  $("proj").innerHTML = `<article class="rec"><div class="when">${esc(t(p.period))}</div><div>
-      <h3>${esc(t(p.name))}</h3><p class="org" style="color:var(--ink)">${esc(t(p.about))}</p>
-      <ul>${t(p.points).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${tags(p.tags)}</div></article>`;
-  $("skills").innerHTML = D.skills.map(s=>`<tr><td>${esc(t(s.group))}</td><td>${s.items.map(esc).join(", ")}</td></tr>`).join("");
+      ${list(t(e.points))}${tags(e.tags)}</div></article>`).join("");
+  $("skillrows").innerHTML = D.skills.map(s=>`<tr><td>${esc(t(s.group))}</td><td>${s.items.map(esc).join(", ")}</td></tr>`).join("");
   $("certs").innerHTML = D.certifications.map(c=>`<tr><td style="width:auto">${esc(c.name)}<div style="color:var(--mute);font-weight:400">${esc(c.issuer)}</div></td><td class="right">${esc(t(c.date))}</td></tr>`).join("");
-  $("edu").innerHTML = D.education.map(e=>`<div style="border-top:2px solid var(--ink);padding-top:12px"><strong>${esc(t(e.school))}</strong><div>${esc(t(e.degree))}</div><div style="color:var(--mute)">${esc(e.period)}</div></div>`).join("");
-  $("repos").innerHTML = D.repos.map(r=>`<tr><td><a href="https://github.com/sonnguyen1129/${esc(r.name)}" target="_blank" rel="noopener">${esc(r.name)}</a></td><td>${esc(t(r.desc))}</td><td class="right">${esc(r.lang)}</td></tr>`).join("");
+  $("edu").innerHTML = D.education.map(e=>`<div class="edu"><strong>${esc(t(e.school))}</strong><div>${esc(t(e.degree))}</div><div style="color:var(--mute)">${esc(e.period)}</div></div>`).join("");
   $("foot").textContent = `${D.name} · ${u.foot}`;
   draw();
 }
 
 const svg = $("map");
 function box(x,y,w,h,label,opt={}){
-  const fill = opt.fill || "var(--bg)", ink = opt.ink || "var(--ink)";
+  const fill = opt.fill || "var(--panel)", ink = opt.ink || "var(--ink)";
   return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="${fill}" stroke="${opt.stroke||"var(--ink)"}" stroke-width="${opt.sw||1.2}"/>
     <text x="${x+w/2}" y="${y+h/2+5}" text-anchor="middle" font-size="${opt.fs||14}" font-weight="${opt.fw||500}" fill="${ink}">${esc(label)}</text>`;
 }
@@ -187,30 +239,28 @@ function draw(){
   const u = UI[lang], S = u.svc, data = ["PostgreSQL","Redis","RabbitMQ"];
   let g = "";
   if (W >= 760){
-    const cx = [W*0.06, W*0.27, W*0.50, W*0.80], bw = Math.min(170, W*0.17), sh = 40;
-    // clients
-    g += box(cx[0],H*0.30,bw*0.9,sh,u.riders) + box(cx[0],H*0.56,bw*0.9,sh,u.ops);
-    // boundary
-    const bx = cx[1]-14, by = 18, bW = W-bx-14, bH = H-36;
+    const cx = [W*0.04, W*0.26, W*0.50, W*0.79], bw = Math.min(170, W*0.17), sh = 40;
+    g += box(cx[0],H*0.30,bw*0.95,sh,u.riders) + box(cx[0],H*0.58,bw*0.95,sh,u.ops);
+    const bx = cx[1]-16, by = 18, bW = W-bx-18, bH = H-36;
     g += `<rect x="${bx}" y="${by}" width="${bW}" height="${bH}" rx="4" fill="none" stroke="var(--brick)" stroke-width="1.5" stroke-dasharray="6 5"/>
           <text x="${bx+12}" y="${by+22}" font-size="13" font-weight="700" fill="var(--brick)">${esc(u.boundary)}</text>`;
     const gy = H/2-sh/2;
-    g += line(cx[0]+bw*0.9,H*0.30+sh/2,cx[1],H/2,"flow") + line(cx[0]+bw*0.9,H*0.56+sh/2,cx[1],H/2,"flow");
+    g += line(cx[0]+bw*0.95,H*0.30+sh/2,cx[1],H/2,"flow") + line(cx[0]+bw*0.95,H*0.58+sh/2,cx[1],H/2,"flow");
     g += box(cx[1],gy,bw,sh,u.gw,{fill:"var(--ink)",ink:"var(--bg)",fw:700});
-    const step = (H-110)/(S.length-1);
-    S.forEach((s,i)=>{ const y = 55+i*step-sh/2; g += line(cx[1]+bw,H/2,cx[2],y+sh/2,"flow") + box(cx[2],y,bw*1.1,sh,s,{fill:"var(--panel)"}); });
-    const dstep = (H-150)/(data.length-1);
-    data.forEach((d,i)=>{ const y = 75+i*dstep-sh/2; S.forEach((_,j)=>{ if ((i+j)%2===0) g += line(cx[2]+bw*1.1,55+j*step,cx[3],y+sh/2); }); g += box(cx[3],y,bw,sh,d,{sw:2}); });
-    g += `<text x="${cx[3]+bw/2}" y="${H-30}" text-anchor="middle" font-size="13" fill="var(--mute)">+ ${esc(u.ext)}</text>`;
+    const step = (H-120)/(S.length-1);
+    S.forEach((s,i)=>{ const y = 60+i*step-sh/2; g += line(cx[1]+bw,H/2,cx[2],y+sh/2,"flow") + box(cx[2],y,bw*1.1,sh,s); });
+    const dstep = (H-160)/(data.length-1);
+    data.forEach((d,i)=>{ const y = 80+i*dstep-sh/2; S.forEach((_,j)=>{ if ((i+j)%2===0) g += line(cx[2]+bw*1.1,60+j*step,cx[3],y+sh/2); }); g += box(cx[3],y,bw,sh,d,{sw:2}); });
+    g += `<text x="${cx[3]+bw/2}" y="${H-32}" text-anchor="middle" font-size="13" fill="var(--mute)">+ ${esc(u.ext)}</text>`;
   } else {
-    const bw = Math.min(W-56, 300), x = (W-bw)/2, sh = 38, half = (bw-10)/2;
-    g += box(x,14,half,sh,u.riders,{fs:13}) + box(x+half+10,14,half,sh,u.ops,{fs:13});
-    g += `<rect x="${x-12}" y="72" width="${bw+24}" height="${H-86}" rx="4" fill="none" stroke="var(--brick)" stroke-width="1.5" stroke-dasharray="6 5"/>
-          <text x="${x}" y="92" font-size="12" font-weight="700" fill="var(--brick)">${esc(u.boundary)}</text>`;
-    g += line(x+half/2,14+sh,W/2,104,"flow") + line(x+half*1.5+10,14+sh,W/2,104,"flow");
-    g += box(x,104,bw,sh,u.gw,{fill:"var(--ink)",ink:"var(--bg)",fw:700,fs:13});
-    S.forEach((s,i)=>{ const y = 168+i*(sh+12); g += line(W/2,104+sh,x+16,y+sh/2,"flow") + box(x+16,y,bw-16,sh,s,{fill:"var(--panel)",fs:13}); });
-    const dy = 168+S.length*(sh+12)+14, dw = (bw-16)/3;
+    const bw = Math.min(W-48, 320), x = (W-bw)/2, sh = 38, half = (bw-10)/2;
+    g += box(x,16,half,sh,u.riders,{fs:13}) + box(x+half+10,16,half,sh,u.ops,{fs:13});
+    g += `<rect x="${x-12}" y="74" width="${bw+24}" height="${H-88}" rx="4" fill="none" stroke="var(--brick)" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <text x="${x}" y="94" font-size="12" font-weight="700" fill="var(--brick)">${esc(u.boundary)}</text>`;
+    g += line(x+half/2,16+sh,W/2,106,"flow") + line(x+half*1.5+10,16+sh,W/2,106,"flow");
+    g += box(x,106,bw,sh,u.gw,{fill:"var(--ink)",ink:"var(--bg)",fw:700,fs:13});
+    S.forEach((s,i)=>{ const y = 170+i*(sh+12); g += line(W/2,106+sh,x+16,y+sh/2,"flow") + box(x+16,y,bw-16,sh,s,{fs:13}); });
+    const dy = 170+S.length*(sh+12)+14, dw = (bw-16)/3;
     data.forEach((d,i)=>{ g += box(x+i*(dw+8),dy,dw,sh,d,{sw:2,fs:12}); });
     g += `<text x="${W/2}" y="${dy+sh+28}" text-anchor="middle" font-size="12" fill="var(--mute)">+ ${esc(u.ext)}</text>`;
   }
