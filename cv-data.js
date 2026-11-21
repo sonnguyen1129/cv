@@ -142,15 +142,21 @@ window.CV = {
       company: "VTI",
       period: { en: "Oct 2020 – Apr 2021", vi: "10/2020 – 04/2021" },
       place: { en: "Me Tri, Hanoi · Full-time", vi: "Mễ Trì, Hà Nội · Toàn thời gian" },
-      points: { en: ["Java backend engineering and database work."], vi: ["Phát triển backend Java và làm việc với cơ sở dữ liệu."] },
-      tags: ["Java", "Databases"]
+      points: {
+        en: ["Backend development in Java and Spring Boot for client projects, including MaaS and FACE EX (see Projects).", "Database work on PostgreSQL; messaging with RabbitMQ."],
+        vi: ["Phát triển backend bằng Java, Spring Boot cho các dự án khách hàng, gồm MaaS và FACE EX (xem mục Dự án).", "Làm việc với cơ sở dữ liệu PostgreSQL; messaging với RabbitMQ."]
+      },
+      tags: ["Java", "Spring Boot", "PostgreSQL", "RabbitMQ"]
     },
     {
       role: { en: "Software Engineer", vi: "Kỹ sư phần mềm" },
       company: "Viettel Solutions Corporation",
       period: { en: "Jun 2020 – Oct 2020", vi: "06/2020 – 10/2020" },
       place: { en: "Hanoi · Full-time", vi: "Hà Nội · Toàn thời gian" },
-      points: { en: ["Java enterprise applications on Oracle and MySQL, deployed on GlassFish."], vi: ["Ứng dụng doanh nghiệp Java trên Oracle, MySQL, triển khai trên GlassFish."] },
+      points: {
+        en: ["Java enterprise applications on Oracle and MySQL, deployed on GlassFish.", "Fixed bugs and built server-side applications.", "Maintained the system and developed new features."],
+        vi: ["Ứng dụng doanh nghiệp Java trên Oracle, MySQL, triển khai trên GlassFish.", "Hỗ trợ sửa lỗi, xây dựng các ứng dụng phía server.", "Bảo trì và phát triển thêm tính năng cho hệ thống."]
+      },
       tags: ["Java", "Oracle", "MySQL", "GlassFish"]
     },
     {
@@ -158,15 +164,70 @@ window.CV = {
       company: "Newwave Solutions",
       period: { en: "Jun 2019 – Apr 2020", vi: "06/2019 – 04/2020" },
       place: { en: "Me Tri, Hanoi · Full-time", vi: "Mễ Trì, Hà Nội · Toàn thời gian" },
-      points: { en: ["Web applications with a Java backend and Vue.js front-end."], vi: ["Ứng dụng web với backend Java và front-end Vue.js."] },
-      tags: ["Java", "Vue.js"]
+      points: {
+        en: ["Built web sites to the company's roadmap with a Java backend and Vue.js front-end (TOP, RW).", "Wrote APIs; maintained the systems and developed new features."],
+        vi: ["Xây dựng các site theo kế hoạch của công ty với backend Java và front-end Vue.js (TOP, RW).", "Viết API; bảo trì và phát triển thêm tính năng cho hệ thống."]
+      },
+      tags: ["Java", "Spring Boot", "Vue.js", "TypeScript"]
+    },
+    {
+      role: { en: "Java Intern", vi: "Thực tập sinh Java" },
+      company: "FPT Software",
+      period: { en: "Jul 2018 – Sep 2018", vi: "07/2018 – 09/2018" },
+      place: { en: "Hanoi · Internship", vi: "Hà Nội · Thực tập" },
+      points: { en: ["Java internship during university."], vi: ["Thực tập lập trình Java trong thời gian học đại học."] },
+      tags: ["Java"]
+    }
+  ],
+
+  // Các dự án khác (MaaS đã có phần riêng phía trên).
+  projects: [
+    {
+      name: "TRIP",
+      period: { en: "Apr 2021 – Sep 2021", vi: "04/2021 – 09/2021" },
+      kind: { en: "Legacy modernisation", vi: "Hiện đại hoá hệ thống cũ" },
+      points: {
+        en: ["Read and analysed the existing codebase, then rebuilt its modules as new ones."],
+        vi: ["Đọc, phân tích mã nguồn cũ và dựng lại thành các module mới."]
+      },
+      tags: ["Java", "Spring Boot", "Caesar framework"]
+    },
+    {
+      name: "FACE EX",
+      period: { en: "Dec 2020 – Apr 2021", vi: "12/2020 – 04/2021" },
+      kind: { en: "Backend foundation", vi: "Nền tảng backend" },
+      points: {
+        en: ["Built the base API layer for the system."],
+        vi: ["Dựng base API cho hệ thống."]
+      },
+      tags: ["Java", "Spring Boot", "RabbitMQ", "PostgreSQL"]
+    },
+    {
+      name: "TOP",
+      period: { en: "Oct 2019 – Apr 2020", vi: "10/2019 – 04/2020" },
+      kind: { en: "Full-stack web", vi: "Web full-stack" },
+      points: {
+        en: ["Maintained the project's sites and fixed bugs across backend and front-end.", "Delivered requested features end to end."],
+        vi: ["Bảo trì, sửa lỗi trên các site của dự án, cả backend và front-end.", "Thực hiện các tính năng được yêu cầu từ đầu đến cuối."]
+      },
+      tags: ["Java", "Spring Boot", "Vue.js", "TypeScript", "JavaScript"]
+    },
+    {
+      name: "RW",
+      period: { en: "Jun 2019 – Sep 2019", vi: "06/2019 – 09/2019" },
+      kind: { en: "Front-end migration", vi: "Chuyển đổi front-end" },
+      points: {
+        en: ["Migrated a Flash application to Vue.js.", "Wrote front-end services to handle API requests."],
+        vi: ["Chuyển đổi mã nguồn Flash sang Vue.js.", "Viết service xử lý request phía front-end."]
+      },
+      tags: ["Vue.js", "TypeScript"]
     }
   ],
   skills: [
     { group: { en: "Backend", vi: "Backend" }, items: ["Java", "Spring Boot", "Micronaut", "Spring Batch", "Microservices", "RabbitMQ"] },
     { group: { en: "Data", vi: "Dữ liệu" }, items: ["PostgreSQL", "MySQL", "Oracle", "Redis", "DynamoDB"] },
     { group: { en: "Cloud & DevOps", vi: "Cloud & DevOps" }, items: ["AWS", "Kubernetes", "Docker", "CI/CD"] },
-    { group: { en: "Front-end", vi: "Front-end" }, items: ["React", "Vue.js"] },
+    { group: { en: "Front-end", vi: "Front-end" }, items: ["React", "Vue.js", "TypeScript", "JavaScript"] },
     { group: { en: "AI tooling", vi: "Công cụ AI" }, items: ["Claude Code", "Claude Skills", "Subagents"] }
   ],
   certifications: [
@@ -177,5 +238,10 @@ window.CV = {
     { school: { en: "VNU University of Engineering and Technology", vi: "Trường Đại học Công nghệ – ĐHQG Hà Nội" },
       degree: { en: "Bachelor of Science, Computer Science", vi: "Cử nhân Khoa học máy tính" },
       period: "2015 – 2019" }
+  ],
+  languages: [
+    { name: { en: "Vietnamese", vi: "Tiếng Việt" }, level: { en: "Native", vi: "Bản ngữ" } },
+    { name: { en: "English", vi: "Tiếng Anh" }, level: { en: "", vi: "" } },
+    { name: { en: "Japanese", vi: "Tiếng Nhật" }, level: { en: "", vi: "" } }
   ]
 };
