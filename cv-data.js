@@ -2,7 +2,7 @@
 // Mỗi chuỗi song ngữ có dạng { en: "...", vi: "..." }.
 window.CV = {
   name: "Son Nguyen",
-  nameVi: "Nguyễn Công Sơn",
+  nameVi: "Nguyễn Đình Công Sơn",
   title: { en: "Senior Backend Engineer · Java & Cloud Infrastructure", vi: "Kỹ sư Backend cấp cao · Java & Hạ tầng Cloud" },
   location: { en: "Hanoi, Vietnam", vi: "Hà Nội, Việt Nam" },
   links: [
@@ -18,7 +18,23 @@ window.CV = {
   facts: [
     { value: "7+", label: { en: "years building backends", vi: "năm làm backend" } },
     { value: "20+", label: { en: "backend services delivered", vi: "dịch vụ backend đã tham gia" } },
-    { value: "AWS", label: { en: "Certified Solutions Architect", vi: "Chứng chỉ Solutions Architect" } }
+    { value: "AWS", label: { en: "Certified Solutions Architect – Associate", vi: "Chứng chỉ Solutions Architect – Associate" } }
+  ],
+
+  // Thế mạnh cốt lõi — 4 thẻ đầu trang chính.
+  strengths: [
+    { title: { en: "Backend & microservices", vi: "Backend & microservices" },
+      text: { en: "Designing, building and running Java services with Spring Boot and Micronaut.", vi: "Thiết kế, xây dựng và vận hành dịch vụ Java với Spring Boot và Micronaut." },
+      keys: ["Java", "Spring Boot", "Micronaut"] },
+    { title: { en: "Cloud & Kubernetes", vi: "Cloud & Kubernetes" },
+      text: { en: "AWS Certified Solutions Architect – Associate; runs production workloads on Kubernetes with CI/CD.", vi: "Chứng chỉ AWS Solutions Architect – Associate; vận hành production trên Kubernetes với CI/CD." },
+      keys: ["AWS", "Kubernetes", "Docker"] },
+    { title: { en: "Data performance", vi: "Hiệu năng dữ liệu" },
+      text: { en: "Database performance, scalability and stability across relational and NoSQL stores.", vi: "Hiệu năng, khả năng mở rộng và độ ổn định trên cả CSDL quan hệ và NoSQL." },
+      keys: ["PostgreSQL", "DynamoDB", "Redis"] },
+    { title: { en: "Technical leadership", vi: "Dẫn dắt kỹ thuật" },
+      text: { en: "Leads the team's engineering work and steps into front-end when the product needs it.", vi: "Dẫn dắt công việc kỹ thuật của nhóm, tham gia front-end khi sản phẩm cần." },
+      keys: ["Team lead", "React"] }
   ],
 
   // Dự án tiêu biểu — hiển thị thành phần case study ngay dưới phần giới thiệu.
@@ -154,12 +170,12 @@ window.CV = {
     { group: { en: "AI tooling", vi: "Công cụ AI" }, items: ["Claude Code", "Claude Skills", "Subagents"] }
   ],
   certifications: [
-    { name: "AWS Certified Solutions Architect", issuer: "Amazon Web Services", date: { en: "2026", vi: "2026" } },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: { en: "2023", vi: "2023" } },
     { name: "Claude Academy: Claude 101", issuer: "Anthropic", date: { en: "Nov 2026", vi: "11/2026" } }
   ],
   education: [
     { school: { en: "VNU University of Engineering and Technology", vi: "Trường Đại học Công nghệ – ĐHQG Hà Nội" },
-      degree: { en: "Bachelor of Science, Computer Software Engineering", vi: "Cử nhân Kỹ thuật phần mềm" },
+      degree: { en: "Bachelor of Science, Computer Science", vi: "Cử nhân Khoa học máy tính" },
       period: "2015 – 2019" }
   ]
 };
